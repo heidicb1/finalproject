@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What's for Dinner</title>
+  </head>
+  <body>
+    <h1>Search for a ingredient:</h1>
+    <input type="text" id="search-input" placeholder="Search...">
+    <ul id="search-results"></ul>
+
+    <script>
+      // Define the API endpoint URL
+      const apiEndpoint = 'https://recipe-finder3.p.rapidapi.com/diet/recipes?ingredient=ham';
+
+      // Fetch data from the API endpoint using the Fetch API
+      fetch(apiEndpoint)
+        .then(response => response.json()) // Parse the JSON response
+        .then(data => {
+          const searchInput = document.getElementById('search-input');
+          const searchResults = document.getElementById('search-results');
+          
+          // Define a function to display search results
+          function displaySearchResults(results) {
+            searchResults.innerHTML = ''; // Clear previous search results
+            
+            results.forEach(item => {
+              const listItem = document.createElement('li');
+              listItem.textContent = item.name;
+              searchResults.appendChild(listItem);
+            });
+          }
+          
+          // Add an event listener to the search input
+          searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const filteredData = data.filter(item => item.name.toLowerCase().includes(searchTerm));
+            displaySearchResults(filteredData);
+          });
+        })
+        .catch(error => console.error(error)); // Handle any errors
+    </script>
+  </body>
+</html>
