@@ -17,22 +17,22 @@
     function searchRecipes(event) {
       event.preventDefault(); // Prevent page reload
 
-      let searchQuery = document.getElementById('search-input').value.toLowerCase();
-      const url = 'https://edamam-food-and-grocery-database.p.rapidapi.com/api/food-database/v2/parser?nutrition-type=cooking&category%5B0%5D=generic-foods&health%5B0%5D=alcohol-free';
+      let searchQuery = document.getElementById('search-input').value;
+      const url = 'https://recipe-finder3.p.rapidapi.com/diet/recipes?ingredient=' + searchQuery;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'f3267ea9c0msh63eb12800d328a2p142f6cjsn76ad279862f7',
-		'X-RapidAPI-Host': 'edamam-food-and-grocery-database.p.rapidapi.com'
+		'X-RapidAPI-Key': '93c650552fmsh5813ff2505d4e5cp1c9528jsn98565acb8719',
+		'X-RapidAPI-Host': 'recipe-finder3.p.rapidapi.com'
 	}
 };
-
       // Make an API request
       fetch(url, options)
         .then(function(response) {
           return response.json();
         })
         .then(function(data) {
+          console.log(data)
           displayResults(data.hits);
         })
         .catch(function(error) {
@@ -45,10 +45,13 @@ const options = {
       let resultsContainer = document.getElementById('results');
       resultsContainer.innerHTML = ''; // Clear previous results
 
+      // Create a document to hold the result cards
+      let recipeCards = document.createDocumentFragment();
+      console.log(results)
       // Loop through each recipe and create a result card
       for (let i = 0; i < results.length; i++) {
         let recipe = results[i].recipe;
-
+        
         let card = document.createElement('div');
         card.classList.add('recipe-card');
 
@@ -65,12 +68,26 @@ const options = {
         card.appendChild(image);
         card.appendChild(ingredients);
 
-        resultsContainer.appendChild(card);
+        recipeCards.appendChild(card);
       }
+
+      // Append the recipeCards to the results container
+      resultsContainer.appendChild(recipeCards);
     }
 
     // Attach event listener to the form
     document.getElementById('search-form').addEventListener('submit', searchRecipes);
+
+    // // Add an event listener to the search input
+    // searchInput.addEventListener('input', () => {
+    //                     const searchTerm = searchInput
+    //                         .value
+    //                         .toLowerCase();
+    //                     const filteredData = data.filter(
+    //                         item => item.name.toLowerCase().includes(searchTerm)
+    //                     );
+    //                     displaySearchResults(filteredData);
+    //                 });
   </script>
 
   <style>
