@@ -1,6 +1,6 @@
 
 .recipe-card {
-    width: 250px;
+    width: 300px;
 height: 350;
 border-radius: 10px;
 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -15,6 +15,16 @@ img {
     max-width: 100%;
 object-fit: contain;
 }
+
+@media (min-width: 900px) {
+    .recipe-card {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 100%;
+      margin: auto;
+      align-items: stretch;  
+  
+  }
 /*.cards {
 display: flex;
 flex-wrap: wrap;
