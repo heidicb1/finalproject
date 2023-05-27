@@ -3,6 +3,13 @@ div{
     display: flex;
     flex-wrap: wrap; /*Cards will go to a new line if needed*/
     justify-content: space-between; /*Cards will be spaced evenly*/
+    border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      background-color: white;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-top: 30px;
+      margin-bottom: 30px; 
 }
 
 
@@ -18,16 +25,9 @@ img {
       flex-direction: row;
       flex-wrap: wrap;
       max-width: 300px;
-      max-height: 350px;
-      margin: auto;
+      height: auto;
       align-items: stretch;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        background-color: white;
-        margin-left: 30px;
-        margin-right: 30px;
-        margin-top: 30px;
-        margin-bottom: 30px;  
+       
   
   }
 

@@ -49,13 +49,13 @@ function displayResults(results) {
 
     // Loop through each recipe and create a ingredient card
     
-    let ingredients = document.createElement('p');
+    let description = document.createElement('p');
     
-    ingredients.textContent = 'Ingredients: ' + recipe.ingredient;
+    description.textContent = recipe.description;
 
     card.appendChild(recipeName);
     card.appendChild(imageUrl);
-    card.appendChild(ingredients);
+    card.appendChild(description);
 
     recipeCards.appendChild(card);
   }
