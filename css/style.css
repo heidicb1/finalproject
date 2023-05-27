@@ -11,8 +11,8 @@ margin-top: 30px;
 margin-bottom: 30px;
   }
 
-  .img {
-    width: 100%;
+img {
+    max-width: 100%;
 object-fit: contain;
 }
 /*.cards {
