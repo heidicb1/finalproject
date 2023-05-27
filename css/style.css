@@ -1,45 +1,41 @@
 
-.recipe-card {
-    width: 300px;
-height: 350;
-border-radius: 10px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-background-color: white;
-margin-left: 30px;
-margin-right: 30px;
-margin-top: 30px;
-margin-bottom: 30px;
-  }
+div{
+    display: flex;
+    flex-wrap: wrap; /*Cards will go to a new line if needed*/
+    justify-content: space-between; /*Cards will be spaced evenly*/
+}
+
 
 img {
-    max-width: 100%;
-object-fit: contain;
+    width: 100%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
-@media (min-width: 900px) {
+
     .recipe-card {
+      flex-basis: calc(33.33% - 10px);
       flex-direction: row;
       flex-wrap: wrap;
-      max-width: 100%;
+      max-width: 300px;
+      max-height: 350px;
       margin: auto;
-      align-items: stretch;  
+      align-items: stretch;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        background-color: white;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;  
   
   }
-/*.cards {
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-justify-content: space-between;
-}
 
-.card {
-width: 250px;
-height: 350;
-border-radius: 10px;
-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-background-color: white;
-margin-left: 30px;
-margin-right: 30px;
-margin-top: 30px;
-margin-bottom: 30px;
-}*/ 
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+    .recipe-card {
+      flex-basis: 100%; /* Change to full width on smaller screens */
+    }
+  }
+
+
