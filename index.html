@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Recipe Search</title>
+  <name>Recipe Search</name>
 </head>
 <body>
   <h1>Recipe Search</h1>
@@ -18,12 +18,12 @@
       event.preventDefault(); // Prevent page reload
 
       let searchQuery = document.getElementById('search-input').value;
-      const url = 'https://recipe-finder3.p.rapidapi.com/diet/recipes?ingredient=' + searchQuery;
+      const url = `https://low-carb-recipes.p.rapidapi.com/search?name=${searchQuery}`;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '93c650552fmsh5813ff2505d4e5cp1c9528jsn98565acb8719',
-		'X-RapidAPI-Host': 'recipe-finder3.p.rapidapi.com'
+		'X-RapidAPI-Key': 'b64f23d4cdmshe9407f9ef25d5bep1e0bdfjsn4f879713fce0',
+		'X-RapidAPI-Host': 'low-carb-recipes.p.rapidapi.com'
 	}
 };
       // Make an API request
@@ -42,6 +42,7 @@ const options = {
 
     // Function to display search results
     function displayResults(results) {
+      console.log('What are the results?', results)
       let resultsContainer = document.getElementById('results');
       resultsContainer.innerHTML = ''; // Clear previous results
 
@@ -50,21 +51,21 @@ const options = {
       console.log(results)
       // Loop through each recipe and create a result card
       for (let i = 0; i < results.length; i++) {
-        let recipe = results[i].recipe;
+        let recipe = results[i];
         
         let card = document.createElement('div');
         card.classList.add('recipe-card');
 
-        let title = document.createElement('h2');
-        title.textContent = recipe.label;
+        let name = document.createElement('h2');
+        name.textContent = recipe.name;
 
         let image = document.createElement('img');
         image.src = recipe.image;
 
-        let ingredients = document.createElement('p');
-        ingredients.textContent = 'Ingredients: ' + recipe.ingredientLines.join(', ');
+        //let ingredients = document.createElement('p');
+        //ingredients.textContent = 'Ingredients: ' + recipe.ingredientLines.join(', ');
 
-        card.appendChild(title);
+        card.appendChild(name);
         card.appendChild(image);
         card.appendChild(ingredients);
 

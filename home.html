@@ -1,101 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Recipe Search</title>
-</head>
-<body>
-  <h1>Recipe Search</h1>
-  <form id="search-form">
-    <label for="search-input">Search recipes:</label>
-    <input type="text" id="search-input" required>
-    <button type="submit">Search</button>
-  </form>
-  <div id="results"></div>
+  <head>
+  </head>
+  <body>
+    <h1>Recipe Search</h1>
+    <form id="search-form">
+      <label for="search-input">Search recipes:</label>
+      <input type="text" id="search-input" required />
+      <button type="submit">Search</button>
+    </form>
+    <div id="results"></div>
 
-  <script>
-    // Function to handle form submission
-    function searchRecipes(event) {
-      event.preventDefault(); // Prevent page reload
+    <script>
+      // Function to handle form submission
+      function searchRecipes(event) {
+        event.preventDefault(); // Prevent page reload
 
-      let searchQuery = document.getElementById('search-input').value;
-      const url = 'https://recipe-finder3.p.rapidapi.com/diet/recipes?ingredient=' + searchQuery;
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '93c650552fmsh5813ff2505d4e5cp1c9528jsn98565acb8719',
-		'X-RapidAPI-Host': 'recipe-finder3.p.rapidapi.com'
-	}
-};
-      // Make an API request
-      fetch(url, options)
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(data) {
-          console.log(data)
-          displayResults(data.hits);
-        })
-        .catch(function(error) {
-          console.log('Error:', error);
-        });
-    }
-
-    // Function to display search results
-    function displayResults(results) {
-      let resultsContainer = document.getElementById('results');
-      resultsContainer.innerHTML = ''; // Clear previous results
-
-      // Create a document to hold the result cards
-      let recipeCards = document.createDocumentFragment();
-      console.log(results)
-      // Loop through each recipe and create a result card
-      for (let i = 0; i < results.length; i++) {
-        let recipe = results[i].recipe;
-        
-        let card = document.createElement('div');
-        card.classList.add('recipe-card');
-
-        let title = document.createElement('h2');
-        title.textContent = recipe.label;
-
-        let image = document.createElement('img');
-        image.src = recipe.image;
-
-        let ingredients = document.createElement('p');
-        ingredients.textContent = 'Ingredients: ' + recipe.ingredientLines.join(', ');
-
-        card.appendChild(title);
-        card.appendChild(image);
-        card.appendChild(ingredients);
-
-        recipeCards.appendChild(card);
+        let searchQuery = document.getElementById('search-input').value;
+        const url = `https://low-carb-recipes.p.rapidapi.com/search?name=${searchQuery}`;
+        const options = {
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key':
+              '93c650552fmsh5813ff2505d4e5cp1c9528jsn98565acb8719',
+            'X-RapidAPI-Host': 'low-carb-recipes.p.rapidapi.com',
+          },
+        };
+        // Make an API request
+        fetch(url, options)
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            displayResults(data);
+          })
+          .catch(function (error) {
+            console.log('Error:', error);
+          });
       }
 
-      // Append the recipeCards to the results container
-      resultsContainer.appendChild(recipeCards);
-    }
+      // Function to display search results
+      function displayResults(results) {
+        console.log(results);
+        let resultsContainer = document.getElementById('results');
+        resultsContainer.innerHTML = ''; // Clear previous results
 
-    // Attach event listener to the form
-    document.getElementById('search-form').addEventListener('submit', searchRecipes);
+        // Create a document to hold the result cards
+        let recipeCards = document.createDocumentFragment();
+        // Loop through each recipe and create a result card
+        for (let i = 0; i < results.length; i++) {
+          let recipe = results[i];
 
-    // // Add an event listener to the search input
-    // searchInput.addEventListener('input', () => {
-    //                     const searchTerm = searchInput
-    //                         .value
-    //                         .toLowerCase();
-    //                     const filteredData = data.filter(
-    //                         item => item.name.toLowerCase().includes(searchTerm)
-    //                     );
-    //                     displaySearchResults(filteredData);
-    //                 });
-  </script>
+          let card = document.createElement('div');
+          card.classList.add('recipe-card');
 
-  <style>
-    .recipe-card {
-      border: 1px solid #ccc;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
-  </style>
-</body>
+          let recipeName = document.createElement('h2');
+          recipeName.textContent = recipe.name;
+
+          let imageUrl = document.createElement('img');
+          imageUrl.src = recipe.image;
+
+          // Loop through each recipe and create a ingredient card
+          
+          let ingredients = document.createElement('p');
+          
+          ingredients.textContent = 'Ingredients: ' + recipe.ingredient;
+
+          card.appendChild(recipeName);
+          card.appendChild(imageUrl);
+          card.appendChild(ingredients);
+
+          recipeCards.appendChild(card);
+        }
+
+        // Append the recipeCards to the results container
+        resultsContainer.appendChild(recipeCards);
+      }
+
+      // Attach event listener to the form
+      document
+        .getElementById('search-form')
+        .addEventListener('submit', searchRecipes);
+    </script>
+
+    <style>
+
+      .recipe-card {
+        width: 250px;
+  height: 350;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+      }
+
+      .img {
+        width: 100%;
+  object-fit: contain;
+}
+  /*.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card {
+  width: 250px;
+  height: 350;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}*/   
+    </style>
+  </body>
 </html>
