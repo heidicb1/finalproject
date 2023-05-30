@@ -1,7 +1,17 @@
 
-body{
-  
+body {
+  background-color: #373E40;
+  color: #FFFFFF;
+  font-family: Arial, sans-serif;
 }
+
+h1 {
+  color: #FFFFFF;
+}
+h2 {
+  color: black;
+}
+
 /*index page*/
 #results{
     display: flex;
@@ -62,4 +72,5 @@ img {
     }
   }
 
-
+  
+  
