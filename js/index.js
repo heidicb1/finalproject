@@ -75,6 +75,8 @@ function displayResults(results) {
 
   // Append the recipeCards to the results container
   resultsContainer.appendChild(recipeCards);
+  let customizationBtn = document.getElementById('customize-btn')
+  customizationBtn.disabled = false
 }
 
 // Function to redirect to the recipe page

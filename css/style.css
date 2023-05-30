@@ -142,7 +142,7 @@ border-radius: 5px;
 /*Customize Style*/
 /* Style for the customize container */
 #customize-container {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 20px;
 }

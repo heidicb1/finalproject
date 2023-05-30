@@ -2,7 +2,7 @@
 // Function to toggle the style customization interface
 function toggleCustomization() {
     const customizeContainer = document.getElementById('customize-container');
-    customizeContainer.classList.toggle('show');
+    customizeContainer.classList.add('show');
   }
   
   // Function to apply the custom styles based on user input
@@ -10,11 +10,15 @@ function toggleCustomization() {
     const textColor = document.getElementById('color-input').value;
     const backgroundColor = document.getElementById('background-input').value;
     const fontSize = document.getElementById('font-size-input').value;
+    console.log(textColor)
+    console.log(backgroundColor)
+    console.log(fontSize)
   
     // Apply the custom styles to specific elements
     const recipeNameElement = document.getElementById('recipeName');
+    console.log(recipeNameElement)
     recipeNameElement.style.color = textColor;
-  
+    
     const resultsContainer = document.getElementById('results');
     resultsContainer.style.backgroundColor = backgroundColor;
   
@@ -25,7 +29,10 @@ function toggleCustomization() {
   }
   
   // Attach event listener to the toggle button
-  document.getElementById('customize-btn').addEventListener('click', toggleCustomization);
+  document.getElementById('customize-btn').addEventListener('click', function(){
+    toggleCustomization()
+  });
+  
   
   // Attach event listener to the apply button
   document.getElementById('apply-btn').addEventListener('click', applyCustomStyles);
