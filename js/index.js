@@ -50,6 +50,7 @@ function displayResults(results) {
 
     let recipeName = document.createElement('h2');
     recipeName.textContent = recipe.name;
+    recipeName.id = 'recipeName'; // Add HTML id to the recipeName element
 
     // Add a click event listener to the recipe name
     recipeName.addEventListener('click', function () {
@@ -103,10 +104,3 @@ resultButtons.forEach(button => {
     window.location.href = `recipe.html?id=${itemId}`;
   });
 });
-
-// // Check if there are recipes in local storage
-// const storedRecipes = localStorage.getItem('recipes');
-// if (storedRecipes) {
-//   const parsedRecipes = JSON.parse(storedRecipes);
-//   displayResults(parsedRecipes);
-// }

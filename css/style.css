@@ -19,15 +19,13 @@ h2 {
     justify-content: space-between; /*Cards will be spaced evenly*/
 }
 
-
 img {
     width: 100%;
     max-height: 80%;
     object-fit: contain;
 }
 
-
-    .recipe-card {
+.recipe-card {
       flex-basis: calc(33.33% - 10px);
       flex-direction: row;
       flex-wrap: wrap;
@@ -46,6 +44,97 @@ img {
   box-shadow: 0 4px 8px 0 #F5A937;
 }
 
+.recipe-card {
+  flex-basis: calc(33.33% - 10px);
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 350px;
+  height: 375px;
+  align-items: stretch;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 #373e40;
+  background-color: white;
+  
+  margin-top: 20px;
+  margin-bottom: 10px; 
+}
+
+.recipe-card:hover{
+box-shadow: 0 4px 8px 0 #F5A937;
+}
+
+#recipeName:hover{
+background-color:  #F5EBE0;
+border-radius: 10px;
+margin-right: 5px;
+margin-left: 5px;
+cursor: pointer;
+}
+
+/*Search Form*/
+
+#search-form {
+display: flex;
+align-items: center;
+}
+
+#search-form label {
+margin-right: 10px;
+color: #FFFFFF;
+}
+
+#search-input{
+padding: 5px 10px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+#search-input:focus {
+outline: none;
+border-color: #F5A937;
+}
+
+#search-form button {
+padding: 5px 10px;
+margin-left: 5px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+#search-form button:hover {
+background-color: #f5a937;
+}
+
+/* Recipe page*/
+
+#recipe-image{
+max-width: 500px;
+height: cover;
+border-radius: 10px;
+box-shadow: 0 4px 8px 0 #373e40;
+}
+/* Header/Logo Title */
+.header {
+padding: 60px;
+text-align: center;
+background-image: url("../images/farmdining.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+color: white;
+font-size: 30px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+.recipe-card {
+  flex-basis: 100%; /* Change to full width on smaller screens */
+}
+}
+
+
 /* Recipe page*/
 
 #recipe-image{
@@ -59,8 +148,9 @@ img {
   padding: 60px;
   text-align: center;
   background-image: url("../images/farmdining.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   font-size: 30px;
 }
