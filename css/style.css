@@ -58,13 +58,16 @@ img {
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 #373e40;
   background-color: white;
-  
   margin-top: 20px;
   margin-bottom: 10px; 
 }
 
 .recipe-card:hover{
 box-shadow: 0 4px 8px 0 #F5A937;
+}
+
+#recipeName{
+  text-align:center;
 }
 
 #recipeName:hover{
@@ -153,7 +156,9 @@ font-size: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 #373e40;
 }
-
+#recipe-name{
+  text-align: center;
+}
 .recipe-info{
   max-width: 300px; /*Set the width and height of box*/
   margin-left:20px;
