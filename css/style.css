@@ -121,7 +121,7 @@ height: cover;
 border-radius: 10px;
 box-shadow: 0 4px 8px 0 #D6CCC2;
 }
-/* Header/Logo Title */
+/* Header */
 .header {
 padding: 60px;
 text-align: center;
@@ -163,34 +163,6 @@ font-size: 30px;
   max-width: 600px; /*Set the width and height of box*/
 }
 
-/* Header/Logo Title */
-.header {
-  padding: 60px;
-  text-align: center;
-  background-image: url("../images/farmdining.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  font-size: 30px;
-}
-
-  /* Media query for smaller screens */
-@media (max-width: 768px) {
-    .recipe-card {
-      flex-basis: 100%; /* Change to full width on smaller screens */
-    }
-      /* Recipe page */
-      .container {
-        flex-direction: column;
-      }
-      
-      .image,
-      .ingredients,
-      .steps {
-        flex-basis: 100%;
-      } 
-  }
 
   
   
