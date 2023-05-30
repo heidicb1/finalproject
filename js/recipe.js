@@ -34,5 +34,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   
     let recipeSteps = document.getElementById('recipe-steps');
-    recipeSteps.textContent = recipe.steps;
-  }
+
+    // Clear previous steps
+    recipeSteps.innerHTML = '';
+  
+    // Create an ordered list for the steps
+  let orderedList = document.createElement('ol');
+
+  // Loop through the steps array and create a list item for each step
+  recipe.steps.forEach(function (step, index) {
+    let stepElement = document.createElement('li');
+    stepElement.textContent = `Step ${index + 1}: ${step}`;
+    orderedList.appendChild(stepElement);
+  });
+
+  // Append the ordered list to the recipe steps container
+  recipeSteps.appendChild(orderedList);
+}
+  

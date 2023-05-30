@@ -2,7 +2,8 @@
 body{
   
 }
-div{
+/*index page*/
+#results{
     display: flex;
     flex-wrap: wrap; /*Cards will go to a new line if needed*/
     justify-content: space-between; /*Cards will be spaced evenly*/
@@ -35,6 +36,14 @@ img {
   box-shadow: 0 4px 8px 0 #F5A937;
 }
 
+/* Recipe page*/
+
+#recipe-image{
+  max-width: 500px;
+  height: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 #373e40;
+}
 /* Header/Logo Title */
 .header {
   padding: 60px;
