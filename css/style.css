@@ -16,6 +16,7 @@ p{
   color: #F5EBE0;
 }
 
+
 /*index page*/
 #results{
     display: flex;
@@ -124,6 +125,7 @@ height: cover;
 border-radius: 10px;
 box-shadow: 0 4px 8px 0 #D6CCC2;
 }
+
 /* Header */
 .header {
 padding: 60px;
@@ -134,8 +136,64 @@ background-position: center;
 background-repeat: no-repeat;
 color: white;
 font-size: 30px;
+border-radius: 5px;
 }
 
+/*Customize Style*/
+/* Style for the customize container */
+#customize-container {
+  display: none;
+  margin-top: 20px;
+}
+
+/* Show the customize container when the show class is applied */
+#customize-container.show {
+  display: block;
+}
+
+/* Style for the customize button */
+#customize-btn {
+  margin-bottom: 20px;
+}
+
+/* Additional styles for customization options */
+#customize-container h3 {
+  margin-bottom: 10px;
+}
+
+#customize-container label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#customize-container input[type="color"],
+#customize-container input[type="number"] {
+  margin-bottom: 10px;
+}
+
+#customize-container button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #F5A937;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+#customize-container button:hover {
+  background-color: #546D6F;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 60px;
+  text-align: center;
+  background-color: #3E6A46;
+  color: white;
+  font-size: 30px;
+  border-radius: 5px;
+  }
 /* Media query for smaller screens */
 @media (max-width: 768px) {
 .recipe-card {

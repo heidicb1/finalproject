@@ -104,3 +104,5 @@ resultButtons.forEach(button => {
     window.location.href = `recipe.html?id=${itemId}`;
   });
 });
+
+
