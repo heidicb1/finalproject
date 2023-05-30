@@ -142,6 +142,10 @@ font-size: 30px;
 
 
 /* Recipe page*/
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 #recipe-image{
   max-width: 500px;
@@ -149,6 +153,16 @@ font-size: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 #373e40;
 }
+
+.recipe-info{
+  max-width: 300px; /*Set the width and height of box*/
+  margin-left:20px;
+}
+
+.steps {
+  max-width: 600px; /*Set the width and height of box*/
+}
+
 /* Header/Logo Title */
 .header {
   padding: 60px;
@@ -166,6 +180,16 @@ font-size: 30px;
     .recipe-card {
       flex-basis: 100%; /* Change to full width on smaller screens */
     }
+      /* Recipe page */
+      .container {
+        flex-direction: column;
+      }
+      
+      .image,
+      .ingredients,
+      .steps {
+        flex-basis: 100%;
+      } 
   }
 
   
