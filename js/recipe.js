@@ -16,9 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let imageUrlElement = document.getElementById('recipe-image');
     imageUrlElement.src = recipe.image;
   
-    let recipeUrlElement = document.getElementById('recipe-url');
-    recipeUrlElement.href = recipe.url;
-    recipeUrlElement.textContent = 'View Recipe';
+    let recipeServings = document.getElementById('recipe-servings');
+    recipeServings.textContent = recipe.servings;
+
+    let recipeIngredients = document.getElementById('recipe-ingredients');
+    recipeIngredients.textContent = recipe.ingredients;
+
+    let recipeSteps = document.getElementById('recipe-steps');
+    recipeSteps.textContent = recipe.steps;
   
     // Display other recipe details as desired
   }
