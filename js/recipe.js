@@ -17,14 +17,22 @@ document.addEventListener('DOMContentLoaded', function () {
     imageUrlElement.src = recipe.image;
   
     let recipeServings = document.getElementById('recipe-servings');
-    recipeServings.textContent = recipe.servings;
-
+    recipeServings.textContent = `Servings: ${recipe.servings}`;
+  
     let recipeIngredients = document.getElementById('recipe-ingredients');
-    recipeIngredients.textContent = recipe.ingredients;
-
+  
+    // Clear previous ingredients
+    recipeIngredients.innerHTML = '';
+  
+    // Loop through the ingredients array and log each ingredient
+    // Used Stackflow help to get this list to work and tried out the for each loop
+    recipe.ingredients.forEach(function (ingredient) {
+      console.log(ingredient);
+      let ingredientElement = document.createElement('li');
+      ingredientElement.textContent = `${ingredient.servingSize.desc} ${ingredient.name}`;
+      recipeIngredients.appendChild(ingredientElement);
+    });
+  
     let recipeSteps = document.getElementById('recipe-steps');
     recipeSteps.textContent = recipe.steps;
-  
-    // Display other recipe details as desired
   }
-  

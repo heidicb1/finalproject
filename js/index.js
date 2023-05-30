@@ -99,8 +99,8 @@ resultButtons.forEach(button => {
     // Get the ID of the clicked item
     const itemId = event.target.getAttribute('data-id');
     
-    // Redirect to the page with more information using the item ID
-    window.location.href = `more_info.html?id=${itemId}`;
+    // Redirect to the page with serving size, ingredients, and instructions using the item ID
+    window.location.href = `recipe.html?id=${itemId}`;
   });
 });
 
