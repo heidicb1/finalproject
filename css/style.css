@@ -12,6 +12,10 @@ h2 {
   color: black;
 }
 
+p{
+  color: #F5EBE0;
+}
+
 /*index page*/
 #results{
     display: flex;
@@ -75,7 +79,9 @@ cursor: pointer;
 
 #search-form {
 display: flex;
+justify-content: center;
 align-items: center;
+margin-top: 20px;
 }
 
 #search-form label {
@@ -109,11 +115,11 @@ background-color: #f5a937;
 
 /* Recipe page*/
 
-#recipe-image{
+img#recipe-image{
 max-width: 500px;
 height: cover;
 border-radius: 10px;
-box-shadow: 0 4px 8px 0 #373e40;
+box-shadow: 0 4px 8px 0 #D6CCC2;
 }
 /* Header/Logo Title */
 .header {
