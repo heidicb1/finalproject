@@ -24,7 +24,7 @@ p{
 #results{
     display: flex;
     flex-wrap: wrap; /*Cards will go to a new line if needed*/
-    justify-content: space-between; /*Cards will be spaced evenly*/
+    justify-content: space-between; 
 }
 
 img {
@@ -217,22 +217,22 @@ cursor: pointer;
 
 /* Credits */
 .credits {
-  font-size: 14px; /* Adjust the font size as desired */
-  margin-top: 20px; /* Add some spacing from the previous element */
-  text-align: center; /* Centers the credit text*/
+  font-size: 14px; 
+  margin-top: 20px; 
+  text-align: center; 
 }
 
 .credits ul {
-  list-style-type: none; /* Remove the default bullet points */
-  padding-left: 0; /* Remove the default left padding */
+  list-style-type: none; 
+  padding-left: 0; 
 }
 
 .credits li {
-  margin-bottom: 3px; /* Add some spacing between the list items */
+  margin-bottom: 3px; 
 }
 
 .credits a {
-  color: #373E40; /* Customize the link color */
+  color: #373E40; 
   font-weight: bold;
 }
 /* Media query for smaller screens */
