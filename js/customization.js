@@ -15,13 +15,12 @@ function toggleCustomization() {
     console.log(fontSize)
   
     // Apply the custom styles to specific elements
-
-   
-    const recipeName = document.getElementsByClassName('recipeName');
-    for (let i = 0; i < recipeName.length; i++) {
-      recipeName[i].style.color = textColor;
+    const recipeNames = document.getElementsByClassName('recipe-card');
+    for (let i = 0; i < recipeNames.length; i++) {
+      const recipeNameElement = recipeNames[i].querySelector('h2');
+      recipeNameElement.style.color = textColor;
     }
-    console.log(textColor)
+   
     const resultsContainer = document.getElementById('results');
     resultsContainer.style.backgroundColor = backgroundColor;
   
