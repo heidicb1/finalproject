@@ -156,7 +156,9 @@ border-radius: 5px;
 
 /* Show the customize container when the show class is applied */
 #customize-container.show {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* Style for the customize button */
