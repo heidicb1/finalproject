@@ -17,7 +17,7 @@ function toggleCustomization() {
     // Apply the custom styles to specific elements
 
    
-    const recipeName = document.getElementsByClassName('recipe-card');
+    const recipeName = document.getElementsByClassName('recipeName');
     for (let i = 0; i < recipeName.length; i++) {
       recipeName[i].style.color = textColor;
     }
