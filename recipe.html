@@ -9,9 +9,11 @@
 </head>
 <body>
     <div class="header"></div>
-  <h1 id="recipe-name"></h1>
+    <div class="wrapper">
+    <div class="container">
+    <h1 id="recipe-name"></h1>
 
-  <div class="container">
+  
     <div class="image">
         <img id="recipe-image" alt="Recipe Image">
     </div>
@@ -25,5 +27,37 @@
 </div>
     
   </div>
+  <!--Footer-->
+<div class="footer">
+  <!-- Add a container to hold the style customization options -->
+  <button id="customize-btn" disabled>Customize Styles</button>
+  <div id="customize-container">
+    
+    <label for="color-input">Text Color:</label>
+    <input type="color" id="color-input" />
+    
+    <label for="background-input">Background Color:</label>
+    <input type="color" id="background-input" />
+  
+    <label for="font-size-input">Font Size:</label>
+    <input type="number" id="font-size-input" min="10" max="50" step="1" />
+  
+    <button id="apply-btn">Apply</button>
+  </div>
+  <div class="credits">
+    <ul>Image credits: 
+      <li><a target="_blank" href="https://icons8.com/icon/95275/citrus">Citrus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></li>
+      <li><a target="_blank" href="https://unsplash.com/photos/vJsj-hgOEG0">Header</a> image by: Spencer Davis</li>
+    </ul>
+    <!-- Portions of the code inspired by or adapted from examples -->
+    <ul>Portions of code were inspired by:
+      <li><a target="_blank" href="https://stackoverflow.com/">Stackoverflow</a></li>
+      <li><a target="_blank" href="https://www.w3schools.com/">W3 Schools</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
+  </body>
+  <script src="js/customization.js"></script>
 </body>
 </html>

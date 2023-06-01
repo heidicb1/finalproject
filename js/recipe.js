@@ -51,4 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // Append the ordered list to the recipe steps container
   recipeSteps.appendChild(orderedList);
 }
+
+
   
