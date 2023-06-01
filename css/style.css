@@ -215,25 +215,25 @@ cursor: pointer;
   background-color: #F5A937;
 }
 
-        /* Credits */
-        .credits {
-          font-size: 14px; /* Adjust the font size as desired */
-          margin-top: 20px; /* Add some spacing from the previous element */
-          text-align: center; /* Centers the credit text*/
-        }
-  
-        .credits ul {
-          list-style-type: none; /* Remove the default bullet points */
-          padding-left: 0; /* Remove the default left padding */
-        }
-  
-        .credits li {
-          margin-bottom: 3px; /* Add some spacing between the list items */
-        }
-  
-        .credits a {
-          color: #373E40; /* Customize the link color */
-          font-weight: bold;
+/* Credits */
+.credits {
+  font-size: 14px; /* Adjust the font size as desired */
+  margin-top: 20px; /* Add some spacing from the previous element */
+  text-align: center; /* Centers the credit text*/
+}
+
+.credits ul {
+  list-style-type: none; /* Remove the default bullet points */
+  padding-left: 0; /* Remove the default left padding */
+}
+
+.credits li {
+  margin-bottom: 3px; /* Add some spacing between the list items */
+}
+
+.credits a {
+  color: #373E40; /* Customize the link color */
+  font-weight: bold;
 }
 /* Media query for smaller screens */
 @media (max-width: 768px) {
