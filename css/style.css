@@ -234,7 +234,7 @@ cursor: pointer;
         .credits a {
           color: #373E40; /* Customize the link color */
           font-weight: bold;
-        }
+}
 /* Media query for smaller screens */
 @media (max-width: 768px) {
 .recipe-card {
