@@ -163,7 +163,7 @@ border-radius: 5px;
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 35vh;
+  min-height: 45vh;
 }
 
 .footer {
