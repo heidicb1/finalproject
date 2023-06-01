@@ -60,15 +60,8 @@ function displayResults(results) {
     let imageUrl = document.createElement('img');
     imageUrl.src = recipe.image;
 
-    // Loop through each recipe and create a ingredient card
-    
-    let recipeUrl = document.createElement('p');
-    
-    recipeUrl.textContent = recipe.url;
-
     card.appendChild(recipeName);
     card.appendChild(imageUrl);
-    card.appendChild(recipeUrl);
 
     recipeCards.appendChild(card);
   }
